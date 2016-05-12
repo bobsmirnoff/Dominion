@@ -1,17 +1,23 @@
 package cards.actions;
 
 import cards.Card;
+import game.DominionException;
+import game.Player;
+import intents.results.IntentResult;
+import intents.IntentWrapper;
+import game.GameEnvironment;
 
 /**
  * Created by bobsmirnov on 11.04.16.
  */
 
-public interface ActionCard extends Card {
-  public int bonusActions();
+public abstract class ActionCard extends Card {
 
-  public int bonusCards();
+  public ActionCard(GameEnvironment env) {
+    super(env);
+  }
 
-  public int bonusBuys();
+  public abstract IntentWrapper play();
 
-  public int bonusCoins();
+  public abstract void onIntentReceived(Player fromPlayer, IntentResult result) throws DominionException;
 }

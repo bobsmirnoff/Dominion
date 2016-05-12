@@ -1,11 +1,16 @@
 package cards.actions;
 
-import cards.actions.ActionCard;
+import game.GameEnvironment;
+import intents.Intent;
 
 /**
  * Created by bobsmirnov on 11.04.16.
  */
 
-public interface ReactionCard extends ActionCard {
-  public void react();
+public abstract class ReactionCard extends ActionCard {
+  public ReactionCard(GameEnvironment env) {
+    super(env);
+  }
+
+  public abstract void react(Intent intent);
 }

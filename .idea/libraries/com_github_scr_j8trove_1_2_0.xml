@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.github.scr:j8trove:1.2.0" type="repository">
+    <properties maven-id="com.github.scr:j8trove:1.2.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/scr/j8trove/1.2.0/j8trove-1.2.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
