@@ -5,7 +5,7 @@ package intents;
  */
 
 public enum IntentTarget {
-  Player,
+  Active_Player,
   Opponents,
   All
 }

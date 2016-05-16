@@ -9,6 +9,8 @@ import java.util.List;
  */
 
 public enum TurnState {
-  WAITING_FOR_RESPONSE,
-  PLAYING;
+  WAITING_FOR_CARD_TO_PLAY,
+  WAITING_FOR_CHOICE,
+  PLAYING_CARD,
+  MID_ACTION;
 }

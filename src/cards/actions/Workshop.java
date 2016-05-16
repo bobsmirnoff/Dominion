@@ -1,17 +1,14 @@
 package cards.actions;
 
 import cards.Card;
-import game.DominionException;
-import game.GainPosition;
-import game.GameEnvironment;
-import game.Player;
+import game.*;
 import intents.IntentWrapper;
 import intents.RangedValueIntentWrapper;
 import intents.results.IntentResult;
 import intents.results.SingleCardResult;
 
 import static intents.Intent.SelectKingdomCard;
-import static intents.IntentTarget.Player;
+import static intents.IntentTarget.Active_Player;
 
 /**
  * Created by bobsmirnov on 15.04.16.
@@ -24,14 +21,15 @@ public class Workshop extends ActionCard {
 
   @Override
   public IntentWrapper play() {
-    return new RangedValueIntentWrapper(SelectKingdomCard, Player, 0, 4);
+    return new RangedValueIntentWrapper(SelectKingdomCard, Active_Player, 0, 4);
   }
 
   @Override
-  public void onIntentReceived(Player from, IntentResult result) throws DominionException {
+  public TurnState onIntentReceived(Player from, IntentResult result) throws DominionException {
     if (from.equals(env.getActivePlayer())
       && result instanceof SingleCardResult && result.getIntent() == SelectKingdomCard && ((Card) result.getResult()).price() < 5)
-      env.gainCard(((Card) result.getResult()).name(), GainPosition.DISCARD);
+      env.gainCard(((Card) result.getResult()).getClass().getSimpleName(), GainPosition.DISCARD_PILE);
+    return TurnState.WAITING_FOR_CARD_TO_PLAY;
   }
 
   @Override

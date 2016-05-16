@@ -128,7 +128,7 @@ class Game {
 
   /**
    * The class for the helper threads in this multithreaded server
-   * application.  A Player is identified by a character mark
+   * application.  A Active_Player is identified by a character mark
    * which is either 'X' or 'O'.  For communication with the
    * client the player has a socket with its input and output
    * streams.  Since only text is being communicated we use a
@@ -156,7 +156,7 @@ class Game {
         output.println("WELCOME " + mark);
         output.println("MESSAGE Waiting for opponent to connect");
       } catch (IOException e) {
-        System.out.println("Player died: " + e);
+        System.out.println("Active_Player died: " + e);
       }
     }
 
@@ -207,7 +207,7 @@ class Game {
           }
         }
       } catch (IOException e) {
-        System.out.println("Player died: " + e);
+        System.out.println("Active_Player died: " + e);
       } finally {
         try {socket.close();} catch (IOException e) {}
       }

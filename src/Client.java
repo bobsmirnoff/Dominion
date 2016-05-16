@@ -101,7 +101,7 @@ public class Client {
         char mark = response.charAt(8);
         icon = new ImageIcon(mark == 'X' ? "x.gif" : "o.gif");
         opponentIcon  = new ImageIcon(mark == 'X' ? "o.gif" : "x.gif");
-        frame.setTitle("Tic Tac Toe - Player " + mark);
+        frame.setTitle("Tic Tac Toe - Active_Player " + mark);
       }
       while (true) {
         response = in.readLine();

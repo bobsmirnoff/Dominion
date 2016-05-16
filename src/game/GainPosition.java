@@ -6,5 +6,5 @@ package game;
 
 public enum GainPosition {
   TOPDECK,
-  DISCARD;
+  DISCARD_PILE;
 }

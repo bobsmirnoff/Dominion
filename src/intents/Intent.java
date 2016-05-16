@@ -9,7 +9,7 @@ public enum Intent {
   ChancellorDecision,
   ChoseVictoryCardFromHand,
   Discard,
-  Notify,
+  Null,
   PlayTreasures,
   PlayActionCard,
   SelectKingdomCard,

@@ -12,4 +12,8 @@ public class IntentWrapper {
     this.intent = intent;
     this.target = target;
   }
+
+  public Intent getIntent() {
+    return intent;
+  }
 }

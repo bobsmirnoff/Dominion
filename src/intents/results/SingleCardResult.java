@@ -2,27 +2,35 @@ package intents.results;
 
 import cards.Card;
 import intents.Intent;
+import intents.IntentTarget;
 
 /**
  * Created by bobsmirnov on 15.04.16.
  */
 
-public class SingleCardResult implements IntentResult<Card> {
-  private Card selectedCard;
-  private Intent intent;
+public class SingleCardResult<C extends Card> implements IntentResult<Card> {
+    private C selectedCard;
+    private Intent intent;
+    private IntentTarget target;
 
-  public SingleCardResult(Card selectedCard, Intent intent) {
-    this.selectedCard = selectedCard;
-    this.intent = intent;
-  }
+    public SingleCardResult(C selectedCard, IntentTarget target, Intent intent) {
+        this.selectedCard = selectedCard;
+        this.intent = intent;
+        this.target = target;
+    }
 
-  @Override
-  public Intent getIntent() {
-    return intent;
-  }
+    @Override
+    public Intent getIntent() {
+        return intent;
+    }
 
-  @Override
-  public Card getResult() {
-    return null;
-  }
+    @Override
+    public Card getResult() {
+        return selectedCard;
+    }
+
+    @Override
+    public IntentTarget getTarget() {
+        return target;
+    }
 }

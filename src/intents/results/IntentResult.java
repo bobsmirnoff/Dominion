@@ -8,9 +8,9 @@ import intents.IntentTarget;
  */
 
 public interface IntentResult<T> {
-  public Intent getIntent();
+    public Intent getIntent();
 
-  public T getResult();
+    public T getResult();
 
- public IntentTarget getTarget();
+    public IntentTarget getTarget();
 }

@@ -2,6 +2,7 @@ package cards.actions;
 
 import game.GameEnvironment;
 import game.Player;
+import game.TurnState;
 import intents.Intent;
 import intents.results.IntentResult;
 import intents.IntentTarget;
@@ -18,17 +19,19 @@ public class Moat extends ReactionCard {
 
   @Override
   public void react(Intent intent) {
-    TODO react
+//    TODO react
   }
 
   @Override
   public IntentWrapper play() {
     env.drawCards(2);
-    return new IntentWrapper(Intent.Notify, IntentTarget.All);
+    return new IntentWrapper(Intent.Null, IntentTarget.All);
   }
 
   @Override
-  public void onIntentReceived(Player from, IntentResult result) {
+  public TurnState onIntentReceived(Player from, IntentResult result) {
+    // TODO
+    return TurnState.WAITING_FOR_CARD_TO_PLAY;
   }
 
   @Override

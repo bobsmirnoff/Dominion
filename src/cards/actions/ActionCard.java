@@ -3,6 +3,7 @@ package cards.actions;
 import cards.Card;
 import game.DominionException;
 import game.Player;
+import game.TurnState;
 import intents.results.IntentResult;
 import intents.IntentWrapper;
 import game.GameEnvironment;
@@ -19,5 +20,5 @@ public abstract class ActionCard extends Card {
 
   public abstract IntentWrapper play();
 
-  public abstract void onIntentReceived(Player fromPlayer, IntentResult result) throws DominionException;
+  public abstract TurnState onIntentReceived(Player fromPlayer, IntentResult result) throws DominionException;
 }

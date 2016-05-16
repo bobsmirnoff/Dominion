@@ -120,7 +120,7 @@ public class GameEnvironment {
     final Card card = supply.gainCard(cardName, this);
     if (card != null) {
       switch (position) {
-        case DISCARD: {
+        case DISCARD_PILE: {
           discard.add(card);
           break;
         }
